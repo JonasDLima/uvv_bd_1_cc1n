@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>cc1n_202203792_hr</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="e7aa9936-ed18-48ea-95b4-2189384573a3" name="regioes" objectType="TABLE" physicalName="regioes" >
+   <remarks>Tabela de regioes contendo codigo e nome das regioes; utilizada em conjunto com paises e localizacoes para compor o endereco dos departamentos.</remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="78e0bcba-b48c-404c-8055-4b50dff1354c" autoIncrement="true" autoIncrementSequenceName="regioes_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PK da tabela de regioes, utilizada como FK na tabela de paises.</remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="ca40e8f9-b95e-4127-9859-f147f310fc5a" autoIncrement="false" autoIncrementSequenceName="regioes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Chave secundaria da tabela de regioes; correspondendo tambem a uma unica linha da tabela.</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX4" populated="true" UUID="586b9bc1-4a3b-4abe-a180-a2ce121744e0" clustered="false" name="regioes_PK" physicalName="regioes_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC5" populated="true" UUID="ebb405d1-d669-4e45-87b1-3d052fe455c7" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="id_regiao" physicalName="id_regiao" />
+    </index>
+    <index id="IDX6" populated="true" UUID="ada28391-3d81-432c-9f2f-d0fd2e302d19" clustered="false" name="regioes_AK" physicalName="regioes_ak" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC7" populated="true" UUID="4719bfea-a329-48fe-8612-9e14bd9aa231" ascendingOrDescending="UNSPECIFIED" column-ref="COL3" name="nome" physicalName="nome" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB8" populated="true" UUID="ed3c34e6-b2ad-4559-83b2-0e2c08530b51" name="paises" objectType="TABLE" physicalName="paises" >
+   <remarks>Tabela de paises contendo codigo, nome e codigo das regioes pertecentes ao pais.
+Compoe o endereco juntamente com a tabela de localizacoes e a tabela de regioes, se relaciona com a tabela de localizacoes atraves da chave estrangeira id_pais na tabela de localizacoes.</remarks>
+   <folder id="FOLTAB81" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL9" populated="true" UUID="1ae0b561-d518-4a39-b406-8ecdd3641d5b" autoIncrement="false" autoIncrementSequenceName="paises_id_pais_seq" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="2" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>PK da tabela e utilizada como FK na tabela de localizacoes.</remarks>
+    </column>
+    <column id="COL10" populated="true" UUID="a27959e5-a1f6-4fe2-8101-00b76122c9a3" autoIncrement="false" autoIncrementSequenceName="paises_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Chave secundaria da tabela de paises; correspondendo tambem a uma unica linha da tabela.</remarks>
+    </column>
+    <column id="COL11" populated="true" UUID="b3343661-783c-4c07-a431-6f137ee4a0a4" autoIncrement="false" autoIncrementSequenceName="paises_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>FK da tabela de regioes</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB83" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB82" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB84" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX12" populated="true" UUID="b1bfb1b0-7779-4845-976c-9c51a618740e" clustered="false" name="paises_pk" physicalName="paises_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC13" populated="true" UUID="b9a82b5e-cec1-4eb1-b0aa-7ea56f06efa1" ascendingOrDescending="UNSPECIFIED" column-ref="COL9" name="id_pais" physicalName="id_pais" />
+    </index>
+    <index id="IDX14" populated="true" UUID="2cd0788d-e3bf-4a54-8e99-a1aadc477c1f" clustered="false" name="paises_AK" physicalName="paises_ak" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC15" populated="true" UUID="a82ee7a5-8163-4013-9b46-0166d06b836a" ascendingOrDescending="UNSPECIFIED" column-ref="COL10" name="nome" physicalName="nome" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB16" populated="true" UUID="0ee012cf-73ba-461d-a2b6-6736ce08477b" name="localizacoes" objectType="TABLE" physicalName="localizacoes" >
+   <remarks>Tabela de localizacoes contem o codigo, nome da rua, cidade, codigo do estado e o codigo do pais ao qual o endereco pertence.
+Relaciona os enderecos dos departamentos atraves da FK id_localizacao na tabela de departamentos.</remarks>
+   <folder id="FOLTAB161" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL17" populated="true" UUID="74e51c80-626c-4612-8328-ab9fac4e9e27" autoIncrement="false" autoIncrementSequenceName="localizacoes_id_localizacoes_seq" defaultValue="" name="id_localizacoes" nullable="0" physicalName="id_localizacoes" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Pk da tabela e utilizada como FK na tabela de departamentos</remarks>
+    </column>
+    <column id="COL18" populated="true" UUID="cc1ceb79-f628-4c2d-ba69-383f0450ad7d" autoIncrement="false" autoIncrementSequenceName="localizacoes_endereco_seq" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Contem o nome da rua e numero de um determinado departamento.</remarks>
+    </column>
+    <column id="COL19" populated="true" UUID="0875c49b-58db-4222-8e69-9951b984317e" autoIncrement="false" autoIncrementSequenceName="localizacoes_cep_seq" defaultValue="" name="cep" nullable="1" physicalName="cep" precision="12" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Codigo postal de determinado departamento</remarks>
+    </column>
+    <column id="COL20" populated="true" UUID="52bb1e0b-b4e9-44bb-bdad-c36d9a52ad10" autoIncrement="false" autoIncrementSequenceName="localizacoes_cidade_seq" defaultValue="" name="cidade" nullable="1" physicalName="cidade" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Cidade de determinado departamento.</remarks>
+    </column>
+    <column id="COL21" populated="true" UUID="b0f962c4-1fec-4b11-97bf-6a5dd910b0fc" autoIncrement="false" autoIncrementSequenceName="localizacoes_uf_seq" defaultValue="" name="uf" nullable="1" physicalName="uf" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks>Codigo do estado de determinado departamento</remarks>
+    </column>
+    <column id="COL22" populated="true" UUID="ac16821e-cc72-4058-af9e-9d1ed1942b8b" autoIncrement="false" autoIncrementSequenceName="localizacoes_id_pais_seq" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="2" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+     <remarks>FK da tabela de paises</remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB163" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB162" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB164" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX23" populated="true" UUID="4e2eff07-79a1-49aa-91d9-fc46b4fc8096" clustered="false" name="localizacoes_pk" physicalName="localizacoes_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC24" populated="true" UUID="528d4fd4-a429-4321-a3be-758c69cea06a" ascendingOrDescending="UNSPECIFIED" column-ref="COL17" name="id_localizacoes" physicalName="id_localizacoes" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL25" populated="true" UUID="118a421a-f373-4327-86e0-1436cbdebb5e" deferrability="7" deleteRule="3" fk-table-ref="TAB8" fkCardinality="7" identifying="false" name="regioes_paises_fk" physicalName="regioes_paises_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP26" populated="true" UUID="1ded3d4b-a633-448a-b02a-b2e07715880c" fk-column-ref="COL11" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL27" populated="true" UUID="46bcd5ff-8518-44c6-a0ac-1bdfed94fd51" deferrability="7" deleteRule="3" fk-table-ref="TAB16" fkCardinality="7" identifying="false" name="paises_localizacoes_fk" physicalName="paises_localizacoes_fk" pk-table-ref="TAB8" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP28" populated="true" UUID="80fd1f98-2f5c-468b-94a0-4152b88e0847" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL9" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="hr"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="22" y="23" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB8" x="20" y="182" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB16" x="391" y="20" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL25" pkConnection="0.5298245614035088" fkConnection="0.45964912280701753" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL27" pkConnection="0.3333333333333333" fkConnection="0.6049382716049383" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
