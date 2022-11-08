@@ -244,8 +244,8 @@ Relaciona os enderecos dos departamentos atraves da FK id_localizacao na tabela 
    <relationship id="REL75" populated="true" UUID="f8214d71-b339-47ea-a2ec-c3d0ff1a16d2" deferrability="7" deleteRule="3" fk-table-ref="TAB58" fkCardinality="7" identifying="true" name="departamentos_historico_cargos_fk" physicalName="departamentos_historico_cargos_fk" pk-table-ref="TAB25" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP76" populated="true" UUID="07fe17d9-359c-4c7a-a255-9d874f65507d" fk-column-ref="COL63" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL26" />
    </relationship>
-   <relationship id="REL77" populated="true" UUID="a88dd74a-904d-4169-b176-d1900b56cd01" deferrability="7" deleteRule="3" fk-table-ref="TAB25" fkCardinality="3" identifying="false" name="empregados_departamentos_fk" physicalName="empregados_departamentos_fk" pk-table-ref="TAB34" pkCardinality="3" updateRule="3" >
-    <column-mapping id="CMP78" populated="true" UUID="df637268-e3c8-469e-9d7e-316057fda108" fk-column-ref="COL29" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL35" />
+   <relationship id="REL77" populated="true" UUID="a88dd74a-904d-4169-b176-d1900b56cd01" deferrability="7" deleteRule="3" fk-table-ref="TAB25" fkCardinality="3" identifying="false" name="empregados_departamentos_fk" physicalName="empregados_departamentos_fk" pk-table-ref="TAB34" pkCardinality="7" updateRule="3" >
+    <column-mapping id="CMP78" populated="true" UUID="fe846da6-c23e-4fa9-a22e-68ec056c261e" fk-column-ref="COL29" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL35" />
    </relationship>
    <relationship id="REL79" populated="true" UUID="b89ef155-22d7-4f78-9d8d-d3923873e0d6" deferrability="7" deleteRule="3" fk-table-ref="TAB34" fkCardinality="7" identifying="false" name="empregados_empregados_fk" physicalName="empregados_empregados_fk" pk-table-ref="TAB34" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP80" populated="true" UUID="b40ef107-fa73-498b-8cfc-26a391b6681d" fk-column-ref="COL44" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL35" />
@@ -269,7 +269,7 @@ Relaciona os enderecos dos departamentos atraves da FK id_localizacao na tabela 
   <table-pane table-ref="TAB8" x="20" y="194" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB16" x="390" y="20" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB25" x="390" y="235" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB34" x="391" y="422" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB34" x="391" y="463" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB49" x="832" y="526" bgColor="0xc8dccc" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB58" x="808" y="272" bgColor="0xc8dccc" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL67" pkConnection="0.5298245614035088" fkConnection="0.45964912280701753" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
