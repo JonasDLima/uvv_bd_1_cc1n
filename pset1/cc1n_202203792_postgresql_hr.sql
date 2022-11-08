@@ -17,10 +17,8 @@ CREATE UNIQUE INDEX cargos_idx
  ON hr.cargos
  ( cargo );
 
-CREATE SEQUENCE hr.regioes_id_regiao_seq;
-
 CREATE TABLE hr.regioes (
-                id_regiao INTEGER NOT NULL DEFAULT nextval('hr.regioes_id_regiao_seq'),
+                id_regiao INTEGER NOT NULL,
                 nome VARCHAR(25) NOT NULL,
                 CONSTRAINT regioes_pk PRIMARY KEY (id_regiao)
 );
@@ -28,8 +26,6 @@ COMMENT ON TABLE hr.regioes IS 'Tabela de regioes contendo codigo e nome das reg
 COMMENT ON COLUMN hr.regioes.id_regiao IS 'PK da tabela de regioes, utilizada como FK na tabela de paises.';
 COMMENT ON COLUMN hr.regioes.nome IS 'Chave secundaria da tabela de regioes; correspondendo tambem a uma unica linha da tabela.';
 
-
-ALTER SEQUENCE hr.regioes_id_regiao_seq OWNED BY hr.regioes.id_regiao;
 
 CREATE UNIQUE INDEX regioes_ak
  ON hr.regioes

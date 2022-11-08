@@ -13,7 +13,7 @@
   <table id="TAB1" populated="true" UUID="e7aa9936-ed18-48ea-95b4-2189384573a3" name="regioes" objectType="TABLE" physicalName="regioes" >
    <remarks>Tabela de regioes contendo codigo e nome das regioes; utilizada em conjunto com paises e localizacoes para compor o endereco dos departamentos.</remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL2" populated="true" UUID="78e0bcba-b48c-404c-8055-4b50dff1354c" autoIncrement="true" autoIncrementSequenceName="regioes_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL2" populated="true" UUID="78e0bcba-b48c-404c-8055-4b50dff1354c" autoIncrement="false" autoIncrementSequenceName="regioes_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>PK da tabela de regioes, utilizada como FK na tabela de paises.</remarks>
     </column>
     <column id="COL3" populated="true" UUID="ca40e8f9-b95e-4127-9859-f147f310fc5a" autoIncrement="false" autoIncrementSequenceName="regioes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
