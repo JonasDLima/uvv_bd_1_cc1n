@@ -534,6 +534,138 @@ NOT DEFERRABLE;
     INSERT INTO departamentos (id_departamento, nome, id_localizacao, id_gerente) VALUES (270, 'Payroll', 1700, null);
 -- Departamentos
 
+-- Cargos
+    INSERT INTO cargos VALUES 
+        ( 'AD_PRES'
+        , 'President'
+        , 20080
+        , 40000
+        );
+INSERT INTO cargos VALUES 
+        ( 'AD_VP'
+        , 'Administration Vice President'
+        , 15000
+        , 30000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'AD_ASST'
+        , 'Administration Assistant'
+        , 3000
+        , 6000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'FI_MGR'
+        , 'Finance Manager'
+        , 8200
+        , 16000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'FI_ACCOUNT'
+        , 'Accountant'
+        , 4200
+        , 9000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'AC_MGR'
+        , 'Accounting Manager'
+        , 8200
+        , 16000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'AC_ACCOUNT'
+        , 'Public Accountant'
+        , 4200
+        , 9000
+        );
+INSERT INTO cargos VALUES 
+        ( 'SA_MAN'
+        , 'Sales Manager'
+        , 10000
+        , 20080
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'SA_REP'
+        , 'Sales Representative'
+        , 6000
+        , 12008
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'PU_MAN'
+        , 'Purchasing Manager'
+        , 8000
+        , 15000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'PU_CLERK'
+        , 'Purchasing Clerk'
+        , 2500
+        , 5500
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'ST_MAN'
+        , 'Stock Manager'
+        , 5500
+        , 8500
+        );
+INSERT INTO cargos VALUES 
+        ( 'ST_CLERK'
+        , 'Stock Clerk'
+        , 2008
+        , 5000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'SH_CLERK'
+        , 'Shipping Clerk'
+        , 2500
+        , 5500
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'IT_PROG'
+        , 'Programmer'
+        , 4000
+        , 10000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'MK_MAN'
+        , 'Marketing Manager'
+        , 9000
+        , 15000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'MK_REP'
+        , 'Marketing Representative'
+        , 4000
+        , 9000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'HR_REP'
+        , 'Human Resources Representative'
+        , 4000
+        , 9000
+        );
+
+INSERT INTO cargos VALUES 
+        ( 'PR_REP'
+        , 'Public Relations Representative'
+        , 4500
+        , 10500
+        );
+-- Cargos
+
 -- Historico
     INSERT INTO historico_cargos (data_inicial, id_empregado, data_final, id_departamento, id_cargo) VALUES ('2001-01-13', '102', '2006-07-24', 60, 'IT_PROG');
     INSERT INTO historico_cargos (data_inicial, id_empregado, data_final, id_departamento, id_cargo) VALUES ('2001-10-28', '101', '2005-03-15', 110, 'AC_MGR');
