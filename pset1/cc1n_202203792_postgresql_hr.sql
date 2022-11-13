@@ -159,7 +159,7 @@ CREATE TABLE hr.historico_cargos (
                 data_final VARCHAR NOT NULL,
                 id_cargo VARCHAR(10) NOT NULL,
                 id_departamento INTEGER NOT NULL,
-                CONSTRAINT historico_cargos_pk PRIMARY KEY (data_inicial)
+                CONSTRAINT historico_cargos_pk PRIMARY KEY (data_inicial, id_empregado)
 );
 COMMENT ON TABLE hr.historico_cargos IS 'Tabela usada para guardar os registros de promocoes e movimentacoes dos funcionarios';
 COMMENT ON COLUMN hr.historico_cargos.data_inicial IS 'PK da tabela';
@@ -237,6 +237,13 @@ REFERENCES hr.empregados (id_empregado)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
+
+/*
+    Desabilita a constraint para poder fazer a insercao dos dados
+    nas tabelas sem violar a mesma.
+*/
+
+ALTER TABLE departamentos DROP CONSTRAINT empregados_departamentos_fk;
 
 -- Insercao dos dados nas tabelas
 
@@ -790,3 +797,15 @@ INSERT INTO cargos (id_cargo, cargo, salario_minimo, salario_maximo) VALUES
     INSERT INTO historico_cargos (data_inicial, id_empregado, data_final, id_departamento, id_cargo) VALUES ('2007-01-01', '136', '2007-12-31', 80, 'SA_MAN');
     INSERT INTO historico_cargos (data_inicial, id_empregado, data_final, id_departamento, id_cargo) VALUES ('2002-07-01', '147', '2006-12-31', 90, 'AC_ACCOUNT');
 -- Historico
+
+/*
+    Habilitando a constraint novamente após a insercao dos dados
+    nas tabelas.
+*/
+
+ALTER TABLE hr.departamentos ADD CONSTRAINT empregados_departamentos_fk
+FOREIGN KEY (id_gerente)
+REFERENCES hr.empregados (id_empregado)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
