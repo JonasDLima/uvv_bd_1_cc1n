@@ -14,10 +14,10 @@
    <remarks>Tabela de regioes, contendo codigo e nome das regioes.</remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL2" populated="true" UUID="78e0bcba-b48c-404c-8055-4b50dff1354c" autoIncrement="false" autoIncrementSequenceName="regioes_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>PK da tabela de regioes, utilizada como FK na tabela de paises.</remarks>
+     <remarks>PK da tabela de regioes; FK na tabela de paises.</remarks>
     </column>
     <column id="COL3" populated="true" UUID="ca40e8f9-b95e-4127-9859-f147f310fc5a" autoIncrement="false" autoIncrementSequenceName="regioes_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="25" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>Chave secundaria da tabela de regioes; correspondendo tambem a uma unica linha da tabela.</remarks>
+     <remarks>Chave secundaria da tabela de regioes.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -40,7 +40,7 @@
      <remarks>PK da tabela e utilizada como FK na tabela de localizacoes.</remarks>
     </column>
     <column id="COL10" populated="true" UUID="a27959e5-a1f6-4fe2-8101-00b76122c9a3" autoIncrement="false" autoIncrementSequenceName="paises_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>Chave secundaria da tabela de paises; correspondendo tambem a uma unica linha da tabela.</remarks>
+     <remarks>Chave secundaria da tabela de paises.</remarks>
     </column>
     <column id="COL11" populated="true" UUID="b3343661-783c-4c07-a431-6f137ee4a0a4" autoIncrement="false" autoIncrementSequenceName="paises_id_regiao_seq" defaultValue="" name="id_regiao" nullable="0" physicalName="id_regiao" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>FK da tabela de regioes</remarks>
@@ -67,7 +67,7 @@ Relaciona os enderecos dos departamentos atraves da FK id_localizacao na tabela 
      <remarks>Pk da tabela e utilizada como FK na tabela de departamentos</remarks>
     </column>
     <column id="COL18" populated="true" UUID="cc1ceb79-f628-4c2d-ba69-383f0450ad7d" autoIncrement="false" autoIncrementSequenceName="localizacoes_endereco_seq" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>Contem o nome da rua e numero de um determinado departamento.</remarks>
+     <remarks>Contem o endereco de um dos departamentos</remarks>
     </column>
     <column id="COL19" populated="true" UUID="0875c49b-58db-4222-8e69-9951b984317e" autoIncrement="false" autoIncrementSequenceName="localizacoes_cep_seq" defaultValue="" name="cep" nullable="1" physicalName="cep" precision="12" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Codigo postal de determinado departamento</remarks>
@@ -131,7 +131,7 @@ Relaciona os enderecos dos departamentos atraves da FK id_localizacao na tabela 
      <remarks>Coluna contendo o nome do funcionario</remarks>
     </column>
     <column id="COL37" populated="true" UUID="f5810bfd-5c00-4b50-b83f-db834329f37e" autoIncrement="false" autoIncrementSequenceName="empregados_email_seq" defaultValue="" name="email" nullable="0" physicalName="email" precision="35" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks>Coluna contendo email do funcionario, utilizada com chave secundaria</remarks>
+     <remarks>Coluna contendo email do funcionario,chave secundaria.</remarks>
     </column>
     <column id="COL38" populated="true" UUID="256347c8-6917-49cd-822e-6a5810265a1c" autoIncrement="false" autoIncrementSequenceName="empregados_telefone_seq" defaultValue="" name="telefone" nullable="1" physicalName="telefone" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna contendo o telefone</remarks>
@@ -260,7 +260,7 @@ Relaciona os enderecos dos departamentos atraves da FK id_localizacao na tabela 
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="hr"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="0.7072305593451569" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
