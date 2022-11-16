@@ -23,7 +23,7 @@ CREATE DATABASE uvv
 ;
 
 -- Acessar o mariadb/mysql com o usuario criado
-SYSTEM mysql -u 'jonas' -p
+SYSTEM mysql -u jonas -p
 
 -- Mudando para o banco de dados recem criado
 USE uvv;
@@ -134,7 +134,6 @@ ALTER TABLE departamentos MODIFY COLUMN nome VARCHAR(50) COMMENT 'Nome do depart
 ALTER TABLE departamentos MODIFY COLUMN id_localizacao INTEGER COMMENT 'FK localizacao';
 
 ALTER TABLE departamentos MODIFY COLUMN id_gerente INTEGER COMMENT 'Codigo do gerente';
-
 
 CREATE UNIQUE INDEX departamentos_ak
  ON departamentos
